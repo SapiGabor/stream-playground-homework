@@ -77,8 +77,7 @@ public class Homework1 {
 ed by the language code "es").
      */
     public long streamPipeline9() {
-        // TODO
-        return 0;
+        return countries.stream().map(Country::getTranslations).filter(t -> !t.containsKey("es")).count();
     }
 
     /**

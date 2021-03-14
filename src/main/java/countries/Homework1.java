@@ -112,8 +112,7 @@ ed by the language code "es").
      * Returns the largest country with non-null area.
      */
     public Optional<Country> streamPipeline14() {
-        // TODO
-        return null;
+        return countries.stream().filter(country -> country.getArea() != null).max(Comparator.comparing(Country::getArea));
     }
 
     /**
@@ -127,7 +126,7 @@ ed by the language code "es").
      * Prints all distinct timezones of European and Asian countries.
      */
     public void streamPipeline16() {
-        // TODO
+        countries.stream().filter(country -> country.getRegion() == Region.EUROPE || country.getRegion() == Region.ASIA).map(Country::getTimezones).flatMap(zones -> zones.stream()).distinct().forEach(System.out::println);
     }
 
 }

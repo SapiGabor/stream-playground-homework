@@ -62,7 +62,7 @@ public class Homework1 {
      * Prints the names of countries in the ascending order of the number of timezones.
      */
     public void streamPipeline7() {
-        // TODO
+        countries.stream().sorted(Comparator.comparingInt(country -> country.getTimezones().size())).map(Country::getName).forEach(System.out::println);
     }
 
     /**

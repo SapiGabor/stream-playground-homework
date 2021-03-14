@@ -27,8 +27,7 @@ public class Homework1 {
      *  Returns the first country name that contains the word "island" ignoring case.
      */
     public Optional<String> streamPipeline2() {
-        // TODO
-        return null;
+        return countries.stream().map(c -> c.getName()).filter(c -> c.toLowerCase().contains("island")).findFirst();
     }
 
     /**

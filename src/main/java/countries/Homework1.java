@@ -55,8 +55,7 @@ public class Homework1 {
      * Returns summary statistics about the number of country name translations associated with each country.
      */
     public IntSummaryStatistics streamPipeline6() {
-        // TODO
-        return null;
+        return countries.stream().mapToInt(c -> c.getTranslations().size()).summaryStatistics();
     }
 
     /**

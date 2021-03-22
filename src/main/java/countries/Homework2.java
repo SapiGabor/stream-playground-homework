@@ -38,7 +38,7 @@ public class Homework2 {
      * Prints the longest country name translation together with its language code in the form language=translation.
      */
     public void streamPipeline3() {
-        // TODO
+        System.out.println(countries.stream().flatMap(c -> c.getTranslations().entrySet().stream()).max(Comparator.comparingInt(n -> n.getValue().length())).get());
     }
 
     /**

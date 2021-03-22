@@ -31,8 +31,7 @@ public class Homework2 {
      * Returns the longest Italian (i.e., {@code "it"}) country name translation.
      */
     public Optional<String> streamPipeline2() {
-        // TODO
-        return null;
+        return countries.stream().flatMap(c -> c.getTranslations().entrySet().stream()).filter(i -> i.getKey() == "it").max(Comparator.comparingInt(n -> n.getValue().length())).map(g -> g.getValue());
     }
 
     /**

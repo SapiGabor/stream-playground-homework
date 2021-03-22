@@ -59,8 +59,7 @@ public class Homework2 {
      * Returns whether there exists at least one capital that is a palindrome.
      */
     public boolean streamPipeline6() {
-        // TODO
-        return false;
+        return countries.stream().map(Country::getCapital).anyMatch(f -> f.toLowerCase().equals(new StringBuilder(f.toLowerCase()).reverse().toString()));
     }
 
     /**

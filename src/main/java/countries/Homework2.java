@@ -65,9 +65,17 @@ public class Homework2 {
     /**
      * Returns the country name with the most number of {@code 'e'} characters ignoring case.
      */
+    private int charCount(String s, char c){
+        int count = 0;
+        for (char item : s.toCharArray()) {
+            if (item == 'c') {
+                count++;
+            }
+        }
+        return count;
+    }
     public Optional<String> streamPipeline7() {
-        // TODO
-        return null;
+        return countries.stream().map(Country::getName).max(Comparator.comparingInt(n -> charCount(n, 'e')));
     }
 
     /**

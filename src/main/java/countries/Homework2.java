@@ -68,7 +68,7 @@ public class Homework2 {
     private int charCount(String s, char c){
         int count = 0;
         for (char item : s.toCharArray()) {
-            if (item == 'c') {
+            if (item == c) {
                 count++;
             }
         }
@@ -78,12 +78,18 @@ public class Homework2 {
         return countries.stream().map(Country::getName).max(Comparator.comparingInt(n -> charCount(n, 'e')));
     }
 
+    private int vowelCount(String s){
+        return charCount(s, 'a') +
+                charCount(s, 'e') +
+                charCount(s, 'i') +
+                charCount(s, 'o') +
+                charCount(s, 'u');
+    }
     /**
      *  Returns the capital with the most number of English vowels (i.e., {@code 'a'}, {@code 'e'}, {@code 'i'}, {@code 'o'}, {@code 'u'}).
      */
     public Optional<String> streamPipeline8() {
-        // TODO
-        return null;
+        return countries.stream().map(Country::getCapital).max(Comparator.comparingInt(f -> vowelCount(f)));
     }
 
     /**

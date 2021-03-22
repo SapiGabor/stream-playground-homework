@@ -45,7 +45,7 @@ public class Homework2 {
      * Prints single word country names (i.e., country names that do not contain any space characters).
      */
     public void streamPipeline4() {
-        // TODO
+        countries.stream().map(n -> n.getName()).filter(c -> !c.contains(" ")).forEach(System.out::println);
     }
 
     /**

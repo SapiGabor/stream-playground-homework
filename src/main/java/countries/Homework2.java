@@ -104,8 +104,7 @@ public class Homework2 {
      * Returns a map that contains the number of countries for each possible timezone.
      */
     public Map<ZoneId, Long> streamPipeline10() {
-        // TODO
-        return null;
+        return countries.stream().map(Country::getTimezones).flatMap(t -> t.stream()).collect(groupingBy(Function.identity(),counting()));
     }
 
     /**

@@ -24,8 +24,7 @@ public class Homework2 {
      * Returns the longest country name translation.
      */
     public Optional<String> streamPipeline1() {
-        // TODO
-        return null;
+        return countries.stream().flatMap(c -> c.getTranslations().values().stream()).max(Comparator.comparingInt(n -> n.length()));
     }
 
     /**

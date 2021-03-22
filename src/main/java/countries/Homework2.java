@@ -11,6 +11,7 @@ import java.util.Optional;
 import static java.util.stream.Collectors.*;
 
 import java.time.ZoneId;
+import java.util.function.Function;
 
 public class Homework2 {
 
@@ -96,8 +97,7 @@ public class Homework2 {
      * Returns a map that contains for each character the number of occurrences in country names ignoring case.
      */
     public Map<Character, Long> streamPipeline9() {
-        // TODO
-        return null;
+        return countries.stream().map(Country::getName).flatMap(name -> name.toLowerCase().chars().mapToObj(c -> (char)c)).collect(groupingBy(Function.identity(), counting()));
     }
 
     /**
